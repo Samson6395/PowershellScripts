@@ -6,7 +6,7 @@ $ServicesUp = @()
 $ServicesDown = @()
 
 # Function to print Service information
-function Print-ServiceInfo {
+function Show-ServiceInfo {
     param (
         
         [Parameter(Mandatory=$true)]
@@ -38,9 +38,9 @@ Write-Host "Total services: $($ServicesUp.Count + $ServicesDown.Count)"
 # print the count of running services
 Write-Host "Running services: $($ServicesUp.Count)" -ForegroundColor Green
 # print the list of running services
-Print-ServiceInfo -Items $ServicesUp
+Show-ServiceInfo -Items $ServicesUp
 
 # print the count of stopped services
 Write-Host "Stopped services:  $($ServicesDown.Count)"  -ForegroundColor Red
 # print the list of stopped services
-Print-ServiceInfo -Items $ServicesDown
+Show-ServiceInfo -Items $ServicesDown
